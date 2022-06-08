@@ -1,0 +1,24 @@
+    function d(){
+      this.name = '张三'
+      this.fn = function(){
+        console.log(this.name);
+      }
+    }
+    d.prototype = {
+      say:function(){
+        console.log(d.effect)
+      }
+    }
+    d.effect = {
+      base:"abc"
+    }
+    var s1 = new d();
+    s1.say();
+
+
+new slide({
+
+}).focus({
+
+})
+dpl-jquery.slide.js

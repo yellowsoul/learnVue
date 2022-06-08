@@ -1,0 +1,22 @@
+【方式一】
+location.hash = 'aaa'
+
+【方式二】
+入栈：
+history.pushState({},'','home')
+出栈：
+history.back()
+
+不能返回：
+history.replaceState({},'','home')
+
+【补充说明】
+上面只演示了三个方法
+因为history.back()等价于history.go(-1)
+history.forward()则等价于history.go(1)
+这三个接口等同于浏览器界面的前进后退。
+
+【Vue打包后出现.map文件】
+解决办法：去config/index.js中改一个参数：
+productionSourceMap:false 
+把这个改为false。不然在最终打包的文件中会出现一些map文件

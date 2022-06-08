@@ -1,0 +1,77 @@
+关于接口的问题 ,我自己搭建了一个 免费提供给大家 
+无参数: www.blogry.cn/test/index  有参数 www.blogry.cn/test/blog?title=我的编程经历
+
+183和182顺序反了   看到小伙伴注意下喔
+做了详细的笔记，有需要的同学可以看看，https://blog.csdn.net/qq_23073811/article/details/118651507
+
+【遍历】
+<div id="app">
+        <p>主要目标,使用v-for 以及 v-bind 当我们点击某一行,某一行变颜色,其他不变</p>
+        <p>集合如下:</p> 
+        <ul>
+            <li v-for=" (value,index) in datalist" :class="{'active':cuerys==index}" @click='bander(index)'
+                :title="value">
+                {{index+1}} -- {{value}}
+            </li>
+        </ul> 
+        <span>
+           Tips: <br>
+        主要思路: <br>
+        0 增加数组  <br>
+        1 使用 for 循环 将数组循环出来 <br>
+        2 增加变量 cuerys  设置初始值 0 <br>
+        3 增加 class  active 并且判断 cuerys 是否等于index,如果是 则 为true,否则为false,这个时候页面加载就会默认选择第一个 <br>
+        4 增加点击事件,传入index  每次点击 则 cuerys 赋值为当前index
+        <br> 
+        </span>
+    </div> const apps = new Vue({
+            el: "#app",
+            data: {
+                cuerys:0,
+                datalist: ["Cgrain", "Whatarey", "小半", "陈粒"] 
+            },
+            methods: {
+                bander: function (obj) {
+                    this.cuerys = obj; 
+                }
+            }
+
+        })
+
+
+【webpack】
+{
+  "name": "meetwebpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^2.0.2",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^13.0.0",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.3"
+  },
+  "dependencies": {
+    "vue": "^2.5.21"
+  }
+}
+
+解决了。。。然而不记得怎么解决了， 这东西不用解决，后期直接脚手架

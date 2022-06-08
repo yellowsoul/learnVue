@@ -1,0 +1,26 @@
+
+安装脚手架版本：
+一、
+npm install -g @vue/cli@3.2.1
+二、
+拉取 2.x模板（旧版本）
+npm install -g @vue/cli-init   @3.2.0
+
+（这样就即可以用脚手架3，也可以用脚手架2）
+
+【开始创建项目】
+一、脚手架2创建方法
+vue init webpack my-project
+
+二、.脚手架3创建方法
+
+vue create my-project
+
+
+在服务上跑浏览项目：
+npm run dev
+打包项目到dist
+npm run build
+
+Eslint（是否开启JS标准，一般不开启）：
+在config文件夹下关闭它，找到index.js --> useEslint: false,

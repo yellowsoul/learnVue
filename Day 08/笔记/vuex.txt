@@ -1,0 +1,18 @@
+【vuex是帮助我们管理多个页面里面需要共享的一些状态】
+
+安装：
+npm install vuex --save (课上版本：@3.0.1)
+
+
+
+ps:
+vue开发的一个测试器插件Devtools，（安装插件）
+在vuex中它可以记录state状态，可以跟踪是某个组件修改的
+
+Vuex状态管理过程：Vue components  ->Actions -> Mutations -> State
+Vue components  ->Mutations 是可以直接绕过Actions的，那Actions是在什么时候用呢？
+答：在处理异步操作的时候用，操作完后提交到Mutations就全都是同步操作了，因为Mutations是同步的，Devtools工具只跟踪到的同步的。
+
+
+Acition --> 异步(Backend API) 后端请求
+Mutations --> 同步(Devtools)工具跟踪 state
